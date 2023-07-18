@@ -20,7 +20,7 @@ def make_recipe():
         'servings': fake.random_number(digits=2, fix_len=True),
         'servings_units': 'Porcao',
         'preparation_steps': fake.text(5000),
-        'created_at': fake.date_time(),
+        # 'created_at': fake.date_time(),
         'author': {
             'first_name': fake.first_name(),
             'last_name': fake.last_name()
@@ -37,3 +37,8 @@ def make_recipe():
 if __name__ == "__main__":
     from pprint import pprint
     pprint(make_recipe())
+    import json
+    from pathlib import Path
+    tests_path = Path(__file__).resolve().parent / 'recipe.json'
+    with tests_path.open(mode='w', encoding='utf-8') as file:
+        json.dump(make_recipe(), file, ensure_ascii=False, indent=2)

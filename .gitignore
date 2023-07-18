@@ -1,4 +1,5 @@
 __localcode
+utils/recipes/recipe.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
